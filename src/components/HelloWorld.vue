@@ -11,7 +11,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      This is an example of deploying a static site created with
+      This is an example of deploying a static site created with <br>
       <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a> on github pages.
     </h3>
