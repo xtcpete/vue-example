@@ -1,35 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Resources from '../components/Resources.vue'         // Your home or main component
+import ProjectRubric from '../components/Rubrics.vue'  // The component displaying your markdown
+
+const routes = [
+  { path: '/', name: 'ProjectRubric', component: ProjectRubric },
+  { path: '/project-resources', name: 'Resources', component: Resources },
+]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/ownership',
-      name: 'ownership',
-      component: () => import('../views/OwnershipView.vue')
-    },
-    {
-      path: '/intake_outcome',
-      name: 'intake_outcome',
-      component: () => import('../views/IntakeOutcomeView.vue')
-    },
-    {
-      path: '/market',
-      name: 'market',
-      component: () => import('../views/MarketView.vue')
-    },
-    {
-      path: '/supply',
-      name: 'supply',
-      component: () => import('../views/SupplyView.vue')
-    },
-  ]
+  history: createWebHistory(),
+  routes,
 })
 
 export default router
