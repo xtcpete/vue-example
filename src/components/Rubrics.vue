@@ -11,7 +11,7 @@ const source = ref("# DSCI 554 Final Project"); // Initial default value
 // Fetch the markdown file content on component mount
 onMounted(async () => {
   try {
-    const response = await fetch('project-rubric.md');
+    const response = await fetch('vue-example/project-rubric.md');
     if (response.ok) {
       source.value = await response.text();
     } else {
