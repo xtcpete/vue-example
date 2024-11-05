@@ -1,55 +1,41 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import Rubric from './components/Rubrics.vue'
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="container">
-    <header>
-      <div class="wrapper">
-        <!-- Title or Logo -->
-        <HelloWorld msg="DSCI 554 Final Project" />
+  <header>
+    <div class="wrapper">
+      <h1>Fluffy friends</h1>
 
-        <!-- Navigation Bar -->
-        <nav>
-          <RouterLink to="/">Rubrics</RouterLink>
-          <RouterLink to="/project-resources">Resources</RouterLink>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Main Content Area -->
-    <RouterView class="subpage" />
-  </div>
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/ownership">Ownership</RouterLink>
+        <RouterLink to="/intake_outcome">Intake and Outcome</RouterLink>
+        <RouterLink to="/market">Market</RouterLink>
+        <RouterLink to="/supply">Supply</RouterLink>
+      </nav>
+    </div>
+  </header>
+  <RouterView class="subpage" />
 </template>
 
 <style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 header {
   line-height: 1.5;
-  text-align: center;
-  width: 100%;
+  max-height: 100vh;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
+
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
 }
 
 nav {
   width: 100%;
-  font-size: 1rem;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -61,30 +47,58 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  padding: 0.5rem 1rem;
-  border-bottom: 2px solid transparent;
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
 }
 
-nav a:hover {
-  border-bottom: 2px solid var(--color-border);
+nav a:first-of-type {
+  border: 0;
 }
-
-
 
 @media (min-width: 1024px) {
-  
   header {
-    margin: 0;
-  }
-
-  .subpage {
-    height: 80vh;
-  }
-
-  body {
-    margin: 0;
     display: flex;
-    flex-direction: column;
+    place-items: center;
+    padding-right: 0;
+    margin: 0;
+    width: 20%;
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    text-align: left;
+    margin-left: -1rem;
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+
+  .subpage{
+    width: 120vh;
+    margin-left: 50px;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    padding-bottom: 5%;
+  }
+
+  body{
+    width: 120vh;
+    height: fit-content;
+    margin: 0;
+    top: 0;
+    display: flex;
   }
 }
 </style>
