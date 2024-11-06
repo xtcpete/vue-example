@@ -1,6 +1,8 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import Rubric from './components/Rubrics.vue'
+import Resources from './components/Resources.vue'
+import deploy from './components/Deploy.vue'
 </script>
 
 <template>
@@ -12,8 +14,9 @@ import Rubric from './components/Rubrics.vue'
 
         <!-- Navigation Bar -->
         <nav>
-          <RouterLink to="/">Rubrics</RouterLink>
-          <RouterLink to="/project-resources">Resources</RouterLink>
+          <RouterLink to="/rubric">Rubrics</RouterLink>
+          <RouterLink to="/resources">Resources</RouterLink>
+          <RouterLink to="/deploy">Deployment Instructions</RouterLink>
         </nav>
       </div>
     </header>

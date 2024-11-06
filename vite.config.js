@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -14,5 +13,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: '/vue-example/' // Change this to the name of your repository, and change it to / if developing locally
+  base: process.env.NODE_ENV === 'production' 
+    ? '/vue-example/' // Change 'vue-example' to your repository name for GitHub Pages
+    : '/'             // Use '/' for local development
 })
